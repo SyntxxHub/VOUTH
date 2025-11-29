@@ -1,4 +1,3 @@
-/* General */
 * {
     margin: 0;
     padding: 0;
@@ -35,7 +34,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 80px;
+    padding: 15px 50px;
     position: fixed;
     top: 0;
     left: 0;
@@ -105,7 +104,7 @@ nav a:not(.get-started-btn):after {
     position: absolute;
     width: 0%;
     height: 2px;
-    background-color: #fff;
+    background-color: #d0d7ff;
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: width, left;
@@ -134,7 +133,6 @@ nav a:not(.get-started-btn):after {
     color: #393d79;
     box-shadow: 0 0 2px rgba(223, 228, 255, 0.6),
         0 0 4px rgba(223, 228, 255, 0.4);
-
 }
 
 /* Hero Section */
@@ -201,9 +199,9 @@ nav a:not(.get-started-btn):after {
 
 .info-card {
     border-radius: 10px;
-    background: #171931;
-    box-shadow: -5px 5px 20px #15172c,
-        5px -5px 20px #191c36;
+    background: #0f1020;
+    box-shadow: -1px -5px 15px #202238, 5px 5px 15px #202238,
+        inset 5px 5px 10px #1d1f35, inset -5px -5px 10px #1d1f35;
     padding: 35px;
     border-radius: 8px;
     max-width: 400px;
@@ -216,7 +214,7 @@ nav a:not(.get-started-btn):after {
 
 .info-card h3 {
     color: #dfe4ff;
-    font-weight: 800;
+    font-weight: 700;
     font-style: italic;
     margin-bottom: 15px;
     font-size: 26px;
@@ -225,7 +223,7 @@ nav a:not(.get-started-btn):after {
 
 .info-card p {
     color: #f3eaff;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .info-card button {
@@ -246,6 +244,15 @@ nav a:not(.get-started-btn):after {
 .info-card button:hover {
     background-color: #dfe4ff;
     color: #393d79;
+    box-shadow: 0 0 5px rgba(223, 228, 255, 0.6),
+        0 0 10px rgba(223, 228, 255, 0.4);
+}
+
+.info-card button:active {
+    background-color: #dfe4ff;
+    color: #393d79;
+    box-shadow: 0 0 3px rgba(223, 228, 255, 0.6),
+        0 0 5px rgba(223, 228, 255, 0.4);
 }
 
 /* List Section */
@@ -323,11 +330,22 @@ nav a:not(.get-started-btn):after {
     text-align: left;
 }
 
+.resources-section h2::after {
+    content: '';
+    display: block;
+    width: 99.3%;
+    height: 0.1px;
+    background-color: #dfe4ff;
+    opacity: 0.4;
+    margin: 20px 0;
+}
+
 .resources-section>h3 {
     color: #dfe4ff;
     margin-bottom: 15px;
     font-size: 20px;
     font-weight: 700;
+    text-transform: uppercase;
     font-style: italic;
     text-align: left;
 }
@@ -336,7 +354,7 @@ nav a:not(.get-started-btn):after {
     color: #f3eaff;
     margin-bottom: 50px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     list-style-position: inside;
     text-align: left;
 }
@@ -378,6 +396,7 @@ nav a:not(.get-started-btn):after {
 
 .resource-name {
     text-align: center;
+    text-transform: uppercase;
     transition: text-align 0.3s ease;
 }
 
@@ -453,7 +472,7 @@ nav a:not(.get-started-btn):after {
 }
 
 .about-content {
-    max-width: 1100px;
+    max-width: 2000px;
     margin: 0 auto;
     display: flex;
     gap: 60px;
@@ -525,6 +544,16 @@ nav a:not(.get-started-btn):after {
     margin-bottom: 15px;
 }
 
+.get-started-section h2::after {
+    content: '';
+    display: block;
+    width: 55%;
+    height: 0.1px;
+    background-color: #dfe4ff;
+    opacity: 0.4;
+    margin: 20px auto 30px auto;
+}
+
 .get-started-intro {
     color: #f3eaff;
     margin-bottom: 50px;
@@ -548,7 +577,7 @@ nav a:not(.get-started-btn):after {
 }
 
 .step-number {
-    color: #9ba0df;
+    color: #9097ff;
     font-weight: 800;
     font-size: 14px;
     letter-spacing: 1px;
@@ -577,7 +606,7 @@ footer {
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 1145px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -597,18 +626,6 @@ footer {
     width: auto;
     height: 60px;
     display: block;
-}
-
-.footer-links a {
-    color: #dfe4ff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.footer-links a:hover {
-    color: #d0d7ff;
 }
 
 .footer-bottom {
