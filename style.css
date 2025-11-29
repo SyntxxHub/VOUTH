@@ -323,7 +323,7 @@ nav a:not(.get-started-btn):after {
     text-align: left;
 }
 
-.resources-section h3 {
+.resources-section>h3 {
     color: #dfe4ff;
     margin-bottom: 15px;
     font-size: 20px;
@@ -376,11 +376,39 @@ nav a:not(.get-started-btn):after {
     transform: translateY(-5px);
 }
 
+.resource-name {
+    text-align: center;
+    transition: text-align 0.3s ease;
+}
+
+.resource-card:hover .resource-name {
+    text-align: left;
+}
+
+.resource-card .resource-name h3 {
+    color: #dfe4ff;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    font-style: italic;
+}
+
 .resource-description {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     transition: max-height 0.4s ease, opacity 0.4s ease;
+    text-align: left;
+}
+
+.resource-description p {
+    color: #f3eaff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 0 8px 0;
+    text-align: left;
 }
 
 .resource-card:hover .resource-description {
@@ -402,22 +430,6 @@ nav a:not(.get-started-btn):after {
     margin-bottom: 20px;
 }
 
-.resource-card h3 {
-    color: #dfe4ff;
-    font-weight: 700;
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-.resource-card p {
-    color: #f3eaff;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto 8px auto;
-    text-align: left;
-}
 
 .breakdown-politics {
     list-style-position: inside;
@@ -478,7 +490,7 @@ nav a:not(.get-started-btn):after {
 .stat-box {
     background-color: #171a35;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 6px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
