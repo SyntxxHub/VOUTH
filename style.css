@@ -197,6 +197,15 @@ nav a:not(.get-started-btn):after {
     background-color: #0c0d1b;
 }
 
+.info-section h2 {
+    color: #dfe4ff;
+    font-size: 30px;
+    font-weight: 800;
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+}
+
 .info-card {
     border-radius: 10px;
     background: #0f1020;
@@ -532,7 +541,7 @@ nav a:not(.get-started-btn):after {
 /* Get Started Section */
 .get-started-section {
     background-color: #0c0d1b;
-    padding: 80px 80px;
+    padding: 80px 0;
     text-align: center;
 }
 
@@ -542,6 +551,7 @@ nav a:not(.get-started-btn):after {
     font-weight: 800;
     font-style: italic;
     margin-bottom: 15px;
+    padding: 0 80px;
 }
 
 .get-started-section h2::after {
@@ -559,6 +569,7 @@ nav a:not(.get-started-btn):after {
     margin-bottom: 50px;
     font-size: 16px;
     font-weight: 500;
+    padding: 0 80px;
 }
 
 .steps-container {
@@ -567,6 +578,7 @@ nav a:not(.get-started-btn):after {
     gap: 30px;
     max-width: 1100px;
     margin: 0 auto;
+    padding: 0 80px;
 }
 
 .step-card {
@@ -596,6 +608,42 @@ nav a:not(.get-started-btn):after {
     font-size: 14px;
     font-weight: 500;
     line-height: 1.6;
+}
+
+.sign-up-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+    padding: 0 80px;
+}
+
+.sign-up-button button {
+    background: none;
+    border: 2px solid #dfe4ff;
+    color: #dfe4ff;
+    padding: 14px 140px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 650;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+.sign-up-button button:hover {
+    background-color: #d0d7ff;
+    color: #393d79;
+    box-shadow: 0 0 5px rgba(223, 228, 255, 0.6),
+        0 0 10px rgba(223, 228, 255, 0.4);
+}
+
+.sign-up-button button:active {
+    background-color: #d0d7ff;
+    color: #393d79;
+    box-shadow: 0 0 2px rgba(223, 228, 255, 0.6),
+        0 0 4px rgba(223, 228, 255, 0.4);
 }
 
 /* Footer */

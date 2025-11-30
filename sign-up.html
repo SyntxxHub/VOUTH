@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOUTH - Volunteer Registration</title>
+    <link rel="icon" type="image/x-icon" href="Logo.ico" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        header {
+            background-color: #0c0d1b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-box {
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-box img {
+            width: auto;
+            height: 70px;
+            display: block;
+        }
+
+        body {
+            background-color: #0c0d1b;
+            color: #fff;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: #171a35;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            color: #aeb1e6;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            margin-left: -35px;
+            padding: 10px 18px;
+            border: 2px solid #2a2d4f;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: #dfe4ff;
+            border-color: #9097ff;
+            background-color: #20223f;
+            transform: translateX(-3px);
+        }
+
+        .form-header h1 {
+            color: #dfe4ff;
+            font-size: 32px;
+            font-weight: 800;
+            font-style: italic;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .form-header p {
+            color: #f3eaff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #aeb1e6;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background-color: #20223f;
+            border: 2px solid #2a2d4f;
+            border-radius: 6px;
+            color: #f3eaff;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            background-color: #20223f;
+            border: 2px solid #2a2d4f;
+            border-radius: 6px;
+            color: #f3eaff;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            appearance: none;
+            background-image: url("https://img.icons8.com/?size=100&id=85502&format=png&color=2a2d4f");
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            padding-right: 45px;
+            cursor: pointer;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #9097ff;
+            background-color: #252847;
+        }
+
+        .form-group select:focus {
+            background-image: url("https://img.icons8.com/?size=100&id=85502&format=png&color=9097ff");
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .checkbox-group {
+            margin-bottom: 25px;
+        }
+
+        .checkbox-group label {
+            color: #aeb1e6;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: block;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-option input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            accent-color: #9097ff;
+        }
+
+        .checkbox-option span {
+            color: #f3eaff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #dfe4ff;
+            color: #0c0d1b;
+            padding: 16px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #d0d7ff;
+            box-shadow: 0 0 15px rgba(223, 228, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 0 8px rgba(223, 228, 255, 0.4);
+        }
+
+        .form-note {
+            text-align: center;
+            color: #9ba0df;
+            font-size: 13px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 30px 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-header h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<header>
+    <div class="logo">
+        <div class="logo-box">
+            <a href="#home">
+                <image src="Logo_Width.png" alt="VOUTH" class="img" />
+            </a>
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class="form-container">
+        <a href="index.html" class="back-btn">← Go Back</a>
+        <div class="form-header">
+            <h1>VOLUNTEER REGISTRATION</h1>
+            <p>Join us in empowering youth voices and strengthening democracy</p>
+        </div>
+
+        <form>
+            <!-- Personal Information -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first-name">First Name *</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name *</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age *</label>
+                <input type="number" id="age" name="age" min="15" max="35" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">City/Municipality *</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+
+            <!-- Volunteer Interests -->
+            <div class="checkbox-group">
+                <label>Areas of Interest *</label>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="voter-education" name="interests" value="voter-education">
+                    <span>Voter Education & Registration Drives</span>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="community-outreach" name="interests" value="community-outreach">
+                    <span>Community Outreach & Events</span>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="social-media" name="interests" value="social-media">
+                    <span>Social Media & Content Creation</span>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="workshops" name="interests" value="workshops">
+                    <span>Leading Workshops & Seminars</span>
+                </div>
+                <div class="checkbox-option">
+                    <input type="checkbox" id="research" name="interests" value="research">
+                    <span>Research & Policy Analysis</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="availability">Availability *</label>
+                <select id="availability" name="availability" required>
+                    <option value="">Select your availability</option>
+                    <option value="weekdays">Weekdays</option>
+                    <option value="weekends">Weekends</option>
+                    <option value="both">Both Weekdays & Weekends</option>
+                    <option value="flexible">Flexible Schedule</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Previous Experience (Optional)</label>
+                <textarea id="experience" name="experience"
+                    placeholder="Tell us about any relevant experience in advocacy, volunteering, or community organizing."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="motivation">Why do you want to volunteer with VOUTH? *</label>
+                <textarea id="motivation" name="motivation" required
+                    placeholder="Share what motivates you to be part of this."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
